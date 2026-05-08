@@ -1,0 +1,28 @@
+{
+  "component_id": "util-queryroute-001",
+  "name": "queryRoute",
+  "display_name": "Route Matching Utility",
+  "category": "Utils / Routing",
+  "import_path": "@/utils/queryRoute",
+  "description": "Matches a dynamic or static path against the global application routing definitions (publicRoutes and protectedRoutes).",
+  "usage_guidelines": [
+    "Handles segment matching, e.g. finding the layout metadata for `/users/[id]` by testing the incoming `/users/123`.",
+    "Used internally within layout and navigation systems."
+  ],
+  "params": [
+    {
+      "name": "path",
+      "type": "string",
+      "required": true,
+      "description": "The normalized navigation query path."
+    }
+  ],
+  "return_value": {
+    "type": "Route | null",
+    "description": "Returns the matching Route configuration object or null if not found."
+  },
+  "best_practices": {
+    "Do": ["Use to verify authority or metadata for the active pathname."],
+    "Dont": ["Don't run expensive route lookups inside frequently rendering loops."]
+  }
+}

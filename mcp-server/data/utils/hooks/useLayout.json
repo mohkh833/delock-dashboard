@@ -1,0 +1,21 @@
+{
+  "component_id": "hook-uselayout-001",
+  "name": "useLayout",
+  "display_name": "Layout Context Hook",
+  "category": "Hooks / UI",
+  "import_path": "@/utils/hooks/useLayout",
+  "description": "Accesses the layout context holding current configuration parameters (adaptive cards, layout type, custom container structures).",
+  "usage_guidelines": [
+    "Should only be used in templates and higher-order page containers.",
+    "Throws if used outside of `LayoutProvider`."
+  ],
+  "params": [],
+  "return_value": {
+    "type": "LayoutContextProps",
+    "description": "The properties containing current layout context state."
+  },
+  "best_practices": {
+    "Do": ["Use when building new page layouts referencing dynamic configuration."],
+    "Dont": ["Do not use in deep nested business components where Layout knowledge isn't required."]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "component_id": "util-daterange-001",
+  "name": "dateRange",
+  "display_name": "Date Range Utilities",
+  "category": "Utils / Date & Time",
+  "import_path": "@/utils/dateRange",
+  "description": "Generates current and comparison date ranges (this week, last week, this month, last month, etc.) using dayjs.",
+  "usage_guidelines": [
+    "Perfect for calculating dashboard analytics time ranges.",
+    "Utilizes dayjs plugin quarterOfYear."
+  ],
+  "params": [
+    {
+      "name": "timeRange",
+      "type": "TimeRange",
+      "required": true,
+      "description": "The range pattern for the current period (e.g. 'thisMonth', 'thisQuarter')."
+    },
+    {
+      "name": "comparisonPeriod",
+      "type": "ComparisonPeriod",
+      "required": true,
+      "description": "The range pattern for the previous period (e.g. 'lastMonth', 'lastQuarter')."
+    }
+  ],
+  "return_value": {
+    "type": "{ current: { start: Date; end: Date }, comparison: { start: Date; end: Date } }",
+    "description": "The computed Date objects representing boundaries of the periods."
+  },
+  "best_practices": {
+    "Do": ["Use to construct API payloads for timeline charts."],
+    "Dont": ["Avoid manual date math for quarters and months. Rely on this dayjs abstraction."]
+  }
+}

@@ -1,0 +1,40 @@
+import classNames from 'classnames'
+import { APP_NAME } from '@/constants/app.constant'
+import type { CommonProps } from '@/@types/common'
+
+interface LogoProps extends CommonProps {
+    type?: 'full' | 'streamline'
+    mode?: 'light' | 'dark' | 'system'
+    imgClass?: string
+    logoWidth?: number | string
+}
+
+const LOGO_SRC = '/img/logo/delock-logo.png'
+
+const Logo = (props: LogoProps) => {
+    const {
+        className,
+        imgClass,
+        style,
+        logoWidth = 'auto',
+    } = props
+
+    return (
+        <div
+            className={classNames('logo', className)}
+            style={{
+                ...style,
+                ...{ width: logoWidth },
+            }}
+        >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+                className={imgClass}
+                src={LOGO_SRC}
+                alt={`${APP_NAME} logo`}
+            />
+        </div>
+    )
+}
+
+export default Logo

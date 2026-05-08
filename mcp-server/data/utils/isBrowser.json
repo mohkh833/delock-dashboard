@@ -1,0 +1,21 @@
+{
+  "component_id": "util-isbrowser-001",
+  "name": "isBrowser",
+  "display_name": "Is Browser Utility",
+  "category": "Utils",
+  "import_path": "@/utils/isBrowser",
+  "description": "A boolean constant that accurately determines if the code is currently running in a browser environment.",
+  "usage_guidelines": [
+    "Use this for preventing SSR errors when accessing the `window` or `document` objects.",
+    "Better than just `typeof window !== 'undefined'` as it checks for `window.document.createElement`."
+  ],
+  "params": [],
+  "return_value": {
+    "type": "boolean",
+    "description": "True if executing in a browser; false otherwise (SSR)."
+  },
+  "best_practices": {
+    "Do": ["Use it in Next.js Server/Client component barriers where window might not exist."],
+    "Dont": ["Do not wrap entire components inside isBrowser condition instead of standard Next.js dynamic imports."]
+  }
+}

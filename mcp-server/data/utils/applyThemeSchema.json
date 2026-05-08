@@ -1,0 +1,40 @@
+{
+  "component_id": "util-applythemeschema-001",
+  "name": "applyThemeSchema",
+  "display_name": "Apply Theme Schema Utility",
+  "category": "Utils / Theme",
+  "import_path": "@/utils/applyThemeSchema",
+  "description": "Applies theme variables (primary, muted, etc.) from the theme schema configuration to the document's root style (CSS variables).",
+  "usage_guidelines": [
+    "Used internally when switching the theme mode (light/dark) or theme schema (color).",
+    "Uses predefined preset colors and assigns them to CSS properties."
+  ],
+  "params": [
+    {
+      "name": "theme",
+      "type": "string",
+      "required": true,
+      "description": "The theme identifier."
+    },
+    {
+      "name": "mode",
+      "type": "Mode",
+      "required": true,
+      "description": "The current mode ('light' or 'dark')."
+    },
+    {
+      "name": "presetThemeSchemaConfig",
+      "type": "ThemeSchemaConfig",
+      "required": true,
+      "description": "The configuration mapping theme names and modes to color variables."
+    }
+  ],
+  "return_value": {
+    "type": "void",
+    "description": "Does not return anything; mutates document root style."
+  },
+  "best_practices": {
+    "Do": ["Call this utility when integrating a custom theme engine."],
+    "Dont": ["Avoid calling directly from components unless implementing custom theme controls."]
+  }
+}

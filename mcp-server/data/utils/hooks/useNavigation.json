@@ -1,0 +1,21 @@
+{
+  "component_id": "hook-usenavigation-001",
+  "name": "useNavigation",
+  "display_name": "Navigation Context Hook",
+  "category": "Hooks / Navigation",
+  "import_path": "@/utils/hooks/useNavigation",
+  "description": "Retrieves the shared Navigation Context data, providing the application's top-level navigation state.",
+  "usage_guidelines": [
+    "Used internally underneath a `NavigationProvider` component.",
+    "Throws an error if the Provider isn't detected up the rendering hierarchy."
+  ],
+  "params": [],
+  "return_value": {
+    "type": "NavigationContextType",
+    "description": "Navigation state such as dynamic route config and sidebar tree."
+  },
+  "best_practices": {
+    "Do": ["Use solely within the navigation boundaries."],
+    "Dont": ["Do not call globally outside of layout contexts."]
+  }
+}

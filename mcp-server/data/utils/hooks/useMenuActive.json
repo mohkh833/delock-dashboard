@@ -1,0 +1,34 @@
+{
+  "component_id": "hook-usemenuactive-001",
+  "name": "useMenuActive",
+  "display_name": "Menu Active Hook",
+  "category": "Hooks / Navigation",
+  "import_path": "@/utils/hooks/useMenuActive",
+  "description": "Parses a navigation tree and recursively determines the active route context based on the incoming path key.",
+  "usage_guidelines": [
+    "Powers the sidebar and header menus by calculating what should be highlighted, including parent menus for deep children.",
+    "Returns both the specific active route and the top-level tree."
+  ],
+  "params": [
+    {
+      "name": "navTree",
+      "type": "NavigationTree[]",
+      "required": true,
+      "description": "The global or partial navigation structure."
+    },
+    {
+      "name": "key",
+      "type": "string",
+      "required": true,
+      "description": "The active route key."
+    }
+  ],
+  "return_value": {
+    "type": "{ activedRoute: NavInfo, includedRouteTree: NavigationTree }",
+    "description": "Contains information about the active tree element and the top-level tree."
+  },
+  "best_practices": {
+    "Do": ["Use to style active navigation links dynamically."],
+    "Dont": ["Avoid re-calculating the nav trees directly; memoization is built-in."]
+  }
+}

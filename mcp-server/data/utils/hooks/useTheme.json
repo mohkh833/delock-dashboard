@@ -1,0 +1,28 @@
+{
+  "component_id": "hook-usetheme-001",
+  "name": "useTheme",
+  "display_name": "Theme Context Hook",
+  "category": "Hooks / Theme",
+  "import_path": "@/utils/hooks/useTheme",
+  "description": "Manages UI preferences including Mode (light/dark), layout structure, CSS direction (RTL/LTR), sideNav state, and Theme schemas.",
+  "usage_guidelines": [
+    "Accepts a selector to optimize re-renders.",
+    "Is a wrapper around ThemeContext and syncs changes to `document.documentElement`."
+  ],
+  "params": [
+    {
+      "name": "selector",
+      "type": "(state: UseThemeReturnType) => T",
+      "required": true,
+      "description": "Selector function for extracting a slice from the theme state."
+    }
+  ],
+  "return_value": {
+    "type": "T",
+    "description": "The requested slice from the `useTheme` return type, heavily typed."
+  },
+  "best_practices": {
+    "Do": ["Pass partial selectors like `useTheme((state) => state.mode)` to prevent unnecessary renders.", "Use `setMode` to seamlessly switch light/dark root element classes."],
+    "Dont": ["Do not extract the entire theme context heavily without a selector."]
+  }
+}

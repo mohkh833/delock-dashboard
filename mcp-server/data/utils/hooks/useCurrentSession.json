@@ -1,0 +1,21 @@
+{
+  "component_id": "hook-usecurrentsession-001",
+  "name": "useCurrentSession",
+  "display_name": "Current Session Hook",
+  "category": "Hooks / Auth",
+  "import_path": "@/utils/hooks/useCurrentSession",
+  "description": "Returns the active session state from the `SessionContext`.",
+  "usage_guidelines": [
+    "Used by UI components that require knowledge of the current authenticated user's session.",
+    "Relies on a parent `NavigationProvider` or `AuthProvider` managing the `SessionContext`."
+  ],
+  "params": [],
+  "return_value": {
+    "type": "{ session: any }",
+    "description": "The current user session context payload."
+  },
+  "best_practices": {
+    "Do": ["Use strictly on the client-side within components.", "Guard UI layers based on session presence."],
+    "Dont": ["Do not attempt to use inside Next.js Server Components."]
+  }
+}
